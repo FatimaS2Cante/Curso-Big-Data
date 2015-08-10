@@ -1,0 +1,16 @@
+#Ejercicio 1
+# -*- coding: utf-8 -*-
+entrada=int(raw_input("elige el valor de x: \n"))
+var1 = entrada+16
+var2 = 5*entrada
+
+print "la variable 1 es:", var1
+print "la variable 2 es:", var2
+
+print "La suma de las dos variables es:", var1+var2
+print "Será %d mayor o igual que %d?" %(var1,var2)
+
+if var1>=var2:
+	print"%d es mayor o igual que %d" %(var1,var2)
+else:
+	print "%d es menor que %d" %(var1,var2)
