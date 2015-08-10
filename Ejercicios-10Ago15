@@ -14,3 +14,44 @@ if var1>=var2:
 	print"%d es mayor o igual que %d" %(var1,var2)
 else:
 	print "%d es menor que %d" %(var1,var2)
+
+#Ejercicio 2
+# -*- coding: utf-8 -*-
+lista = ["abc",42,3.1415,"Juan"]
+print "Esta es la lista inicial \n", lista, "\n"
+
+print "El primer elemento de la lista es: \n", lista [0], "\n"
+print "El último elemento de la lista es: \n", lista [-1], "\n"
+
+lista.append(True)
+print "Agregar un nuevo elemento y ahora la lista es \n", lista, "\n"
+
+print "borrar el cuarto elemento y cambiar el primero \n"
+del lista[3]
+lista[0] = "xyz"
+
+print "los primeros dos elementos de la nueva lista son: \n", lista[0:2], "\n"
+
+lista_anidada = [lista,[True,42L]]
+print "una lista hecha de listas: \n", lista_anidada, "\n"
+print "el primer elemento de la lista en la segunda posición: \n",lista_anidada[1][0]
+
+#Ejercicio 3
+# -*- coding: utf-8 -*-
+diccionario = {"cadena": "abc","numero":42,"lista":[True,42L]}
+print "Este es un diccionario que contiene, entre otras cosas, una lista: \n", diccionario, "\n"
+
+print"la clave CADENA tiene como valor:\n", diccionario["cadena"],"\n"
+
+print "El primer elemento de la lista dentro del diccionario es \n", diccionario["lista"],"\n"
+
+diccionario["cadena"]="xyz"
+print"El nuevo valor de la clave CADENA es:\n", diccionario["cadena"],"\n"
+
+
+diccionario["decimal"]=3.1415927
+print "Se agregó la clave DECIMAL, cuyo valor es: \n", diccionario["decimal"],"\n"
+print "El diccionario ahora es: \n", diccionario, "\n"
+
+otro_diccionario={"otra_lista":[True,3.1415], "diccionario":diccionario}
+print "Otro diccionario, que contiene al viejo diccionario es: \n",otro_diccionario, "\n"
