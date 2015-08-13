@@ -1,0 +1,69 @@
+#Díá 4
+#Minería de datos
+Proceso
+1.Recolección
+2.Limpieza
+3.Procesamiento
+4.Análisis
+5.Perspectivas útiles a partir de los datos
+
+**Espera una hipotesis**
+
+#Fases de un proyecto de minería de dats
+1.Filtrado de datos
+2.Selección de variables
+3.Extracción de conocimiento
+4.Interpretación y evaluación
+
+#Tareas básicas de la minería de datos
+Clasificación
+Estimación
+Predicción
+Agrupación afinidades o reglas de asociación
+Clustering
+Descripción y visualización
+
+#Métodos
+Métodos de aprendizaje automatizado
+-Aprendizaje inductivo basado en ejemplo-aprendizaje
+-Algoritmos genéticos
+Métodos de redes neuronales
+-Redes neuronales de prealimentación (feedforward)
+-Mapas autoorganizados
+Métodos de bases de datos
+-Análisis multidimensional de datos
+-Método inductivo orientado a atributos
+
+#Algoritmos
+C4.5, k-means, SVM, Apriori, EM,Naive Bayes, Cart
+
+#Herramientas de la minería de Big data
+R, Weka, Rapid-I Rapidminer, KNIME
+
+#Tipos de minería
+-Minería web
+-Minería de texto
+
+#Aprendizaje máquina
+No supervisado, Supervisado
+
+#Clustering
+Función de mapeo entre el objeto de estudio y un vector
+
+#MONGODB
+Año 2009
+HuMONGOus - enorme
+Basado en C++
+Multiplataforma
+Master-slave
+No usa SQL ni nada parecido
+
+Documentos=JSON - diccionarios en Python
+Se almacenan en BSON(nativo) [BSON-BinarioSon]
+
+
+
+#en mongodb (bin) [mongod -- dbpath c:\Mongo ]
+#importar json
+#mongoimport --db test --collection tweet --file C:\dirección\tweets1.json
+#mongoimport --db test --collection tweet --file C:\dirección\tweets2.json
