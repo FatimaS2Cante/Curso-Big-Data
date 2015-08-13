@@ -1,0 +1,188 @@
+#Ejercicio crea la grámatica de las siguientes frases (lenguaje natural)
+
+Dirígete hacia el norte
+Gira a la izquierda
+Ahora regresa aquí
+Después voltea hacia allá
+
+Sp:= [ahora, después, antes]
+Vr:= [Dirígete, Gira, voltea, regresa]
+Pr:= [a, hacia, desde
+Art:=[la, el]
+Dr:= [norte,sur,izquierda,derecha,aquí,alla]
+
+#Mi resp
+Gramática
+A->B
+
+A->VrB | SpB | €
+B-> C | D
+C-> PrArtDr | €
+D-> VrPrDr | VrDr | €
+
+#!/usr/bin/env python
+
+import matplotlib.pyplot as plt
+
+
+
+names = [
+"ADELFRIED",
+"BERNADETTE",
+"CARLEIGH",
+"DAGOBERT",
+"ELISABETH",
+"FLOY",
+"GILBERT",
+"HASTINGS",
+"ILSE",
+"JOHANN",
+"KELLEN",
+"LORING",
+"MAUD",
+"NEVIN",
+"ODELL",
+"PENROD",
+"RITTER",
+"STEIN",
+"THEOBOLD",
+"ULBRECHT",
+"VILHELM",
+"WARNER",
+"ZELIG"
+]
+
+nombres = [
+"FABIOLA",
+"FEDERICO",
+"ADOLFO",
+"ALEJANDRO",
+"ARACELI",
+"AURORA",
+"CAMILA",
+"CONSUELO",
+"GUILLERMO",
+"GLORIA",
+"MATEO",
+"MAXIMILIANO",
+"WILFREDO",
+"DANIEL",
+"DOLORES",
+"JACINTO",
+"JAIME",
+"JULIANA",
+"REBECA",
+"RODRIGO",
+"ELENA",
+"VALERIA",
+"ERNESTO",
+
+]
+
+
+def obtener_caracteristicas(lista_nombres):
+	X = []
+	Y = []
+	for cada_nombre in lista_nombres:
+		print "cada nombre: ", cada_nombre
+		longitud = len(cada_nombre)
+		print "LONGITUD: ",longitud
+		vocales = contar_vocales(cada_nombre)
+		print "VOCALES: ", vocales
+		consonantes=float(len(cada_nombre)-vocales)
+		print "CONSONANTES: ", consonantes
+		con_voc=vocales/consonantes
+		X.append(longitud)
+		Y.append(con_voc)
+	return X, Y
+
+def contar_vocales(nombre):
+	voc=["A","E","I","O","U"]
+	cont=0
+	for c in nombre:
+			if c in voc:
+				cont+=1
+	return cont
+
+def promedio(vector):
+	Suma=0.0
+	for elemento in vector:
+		Suma+=elemento
+	Prom=Suma/len(vector)
+	return	Prom
+
+
+X_e, Y_e = obtener_caracteristicas(nombres)
+X_a, Y_a = obtener_caracteristicas(names)
+
+#print "coeficiente de espanol: ", Y_e
+#print "coeficiente de aleman: ", Y_a
+
+#print 2 in [1,2,3,4,5]
+#print 6 in [1,2,3,4,5]
+
+XeP=promedio(X_e)
+YeP=promedio(Y_e)
+XaP=promedio(X_a)
+YaP=promedio(Y_a)
+
+print "Promedio X_e", promedio(X_e)
+print "Promedio Y_e", promedio(Y_e)
+print "Promedio X_a", promedio(X_a)
+print "Promedio Y_a", promedio(Y_a)
+
+plt.plot(X_e, Y_e, 'bo')
+plt.plot(X_a, Y_a, 'ro')
+plt.plot(XeP,YeP,"gx")
+plt.plot(XaP,YaP,"mx")
+plt.axis([0, 15, -3, 3])
+plt.show()
+
+#TAREA!!!
+#Sacar distancia entre el nuevo punto (X_e, Y_e) y los centroides (XeP,YeP)
+
+#Prueba insert MongoDB
+import pymongo
+from pymongo import MongoClient
+Cliente = MongoClient()
+
+db = Cliente.test_database
+collection = db.teste_collection
+
+post = {
+	"author" : "Pedro",
+	"text" : "Hola mundo",
+	"date" : "13 de agosto"
+	}
+post_id = collection.insert(post)
+
+
+uno = collection.find({"author":"Pedro"})
+for item in uno:
+	print item
+
+
+#Contar emoticones del tweet
+import pymongo
+from pymongo import MongoClient
+Cliente = MongoClient()
+
+db = Cliente.test
+collection = db.tweet
+
+uno = collection.find_one()
+print uno["text"].split(" ")
+carita=uno["text"].split(" ")
+
+
+def contar_sonrisas(tweet1):
+	count=0
+	for sonrisa in carita:
+		if sonrisa==":)":
+			count+=1
+	return count
+
+print "Caritas encontradas", contar_sonrisas(carita)
+
+#Tarea!!!!
+#Contar las caritas del tweet.json
