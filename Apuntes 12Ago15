@@ -1,0 +1,127 @@
+#Apuntes Grafos
+g=(N,A)
+N= nodos (padres)
+A= aristas (a-b, a-c)
+G.Adj(u) son los nodos adyacentes al nodo u
+|G.Adj(u)| es el grado del nodo u (número de vecinos)
+(u,v).peso propiedad de la arista u-v
+
+G'= (N',A') sub-grafo N' es un subconjunto de N y A' es un subconjunto de A
+C((n,m)) es el costo (peso) de la arista (n,m), número real
+Caminoamino(n,m) secuencia de nodos conectados que inicia en n y termina en m (o seccuencia de aristas)
+Ciclo de un grafo, significa que hay un camino y termina en el mismo nodo
+
+#Instrucciones uso network
+import network as nx
+import matplotlib.pyplot as plt
+P = nx.path_graph(10)
+nx.draw(P)
+plt.show()
+
+#Primer uso
+cd bin
+server.bat
+cd bin
+console.bat
+
+#Conexión server y consola
+CONNECT remote:localhost root mipass
+LIST DATABASES
+CONNECT remote:/GratefulDeadConcerts admin admin
+
+#Consola
+#Primera tabla
+LIST CLASSES
+CREATE CLASS distribuidor
+CREATE PROPERTY distribuidor.nombre string
+INFO CLASS distribuidor
+DROP CLASS distribidor
+
+#OrientDB con Grafos
+CREATE CLASS productor EXTENDS V
+CREATE CLASS distribuidor EXTENDS V
+CREATE PROPERTY distribuidor.nombre string
+CREATE PROPERTY productor.nombre string
+
+#Creando instancias
+CREATE VERTEX productor SET nombre='impulsor'
+CREATE VERTEX distribuidor SET nombre='repartidor'
+
+#Aristas
+CREATE CLASS flujo EXTENDS E
+CREATE PROPERTY flujo.valor float
+CREATE EDGE flujo FROM#14:0 TO #15:0 SET valor=3.1415
+
+TRAVERSE * FROM #14:0
+
+
+#Navegador
+root
+mypass
+
+	Graph
+		SELECT * FROM V
+
+#Tienes java pero no el jdk***
+Abrir la carpeta de java
+Entrar a bin
+Entrar a cliente
+Copiar el contenido de la carpeta cliente
+Salir a bin
+Crear la carpeta "server"
+Pegar el contenido de la carpeta cliente en server
+Iniciar la conexión a OrientDB
+
+#Árboles de expansión mínima
+Carreteras
+Cableado eléctrico (micro y macro)
+
+#Lineamientos
+Aristas bidireccionales
+Cara asita con un costo/peso (cantidad de cable)
+Se necesita conectar todos los nodos en un grafo ácíclico
+Minimizar
+
+#Análisis previo
+Si es un grafo conectado, acíclico, con aristas bidireccionales entonces debe ser un árbol
+Algoritmos: Kruskal y Prim
+Tiempo: O(A*logN) Usando binary heaps
+Algoritmos: Greedy
+
+#Algoritmo genérico
+MST = vacio
+While MST no forme un árbol de expansión mínima:
+- Encontrar una arista (n,m) segura para agregar a MST
+- Añadir (n,m) a MST
+Return MST
+Cada iteración MST es un subconjunto del árbol de la solución
+
+#Prim (1930)
+Ordenar conjunto de aristas A
+S=cualquier nodo(subgrafo)
+-repetir n-1 veces:
+	-Añadir al árbol MST la arista más pequeña (costo)
+	-anádir un nuevo nodo S
+
+#Flujo máximo
+-Modelo de una red de producción y consumo
+-Dada las capacidades de cada arista ¿cuál es el flujo máximo que soporta la red?
+-Relación con el efecto Bullwhip
+
+#Redes de flujo como grafos
+Grafo dirigido, no hay caminos bidireccionales
+Cada arista tiene una capacidad maxima positiva c(n,m)
+Dos nodos especiales: Fuente f y sumidero s
+
+#Flujo que circula
+Capacidad: para cualquier par de nodos n,m en N;
+0=<f(n,m)=<c(n,m)
+
+Conservación de flujo: para cualquier par de nodos u,v
+
+
+#GRAFOS ojo
+
+#TAREA
+Generar la estructura en el orientdb
+generar a mano el arbol (ford fulkerson)
