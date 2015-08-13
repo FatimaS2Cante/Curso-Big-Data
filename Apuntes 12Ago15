@@ -124,4 +124,4 @@ Conservación de flujo: para cualquier par de nodos u,v
 
 #TAREA
 Generar la estructura en el orientdb
-generar a mano el arbol (ford fulkerson)
+generar a mano el arbol y el ford fulkerson (máximo)
